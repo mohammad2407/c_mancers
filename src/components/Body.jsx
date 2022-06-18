@@ -13,8 +13,7 @@ const Addapost = styled.div`
     width:100%;
     padding: 10px 20px;
     position:relative;
-    height:150px;
-    border:1px solid yellow;
+    height:100px;
     
     & button{
         width:80%;
@@ -53,9 +52,9 @@ export const Body = () => {
         {
             open && <Post close = {setOpen} open = {open}/> 
         }
+         <SinglePost />
     </Postcontainer>
 
-    <SinglePost />
         </>
  
   )

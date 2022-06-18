@@ -1,6 +1,7 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 import  styled  from "styled-components"
+import { ProfileDiv,Profileimg } from '../Post'
 
 export const SinglePost = () => {
    const allposts =   useSelector((state) => state.allPosts.posts) 
@@ -15,11 +16,19 @@ export const SinglePost = () => {
                 <>
                 <PostCard key={content.gifid}>
                 <PostHeader>
-                    <p>Mohammad</p>
+                <ProfileDiv>
+                    <Profileimg>
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ6wfHdYsY-0aLx-XVhhtURCs65sGi78wHNg&usqp=CAU" style={{ width: "100%", height: "100%" }} alt="" />
+                    </Profileimg>
+                    <div>
+                        <h3>Mohammad</h3>
+                    </div>
+                </ProfileDiv>
                 </PostHeader>
 
                 <div>
-                    <img src={content.gifurl} alt="" />
+                    <p style={{textAlign:"left", marginLeft:"5%"}}>{item.title}</p>
+                    <img src={content.gifurl} style = {{width:"100%"}} alt="" />
                 </div>
                 </PostCard>
                 
@@ -34,14 +43,22 @@ export const SinglePost = () => {
 
 const PostHeader = styled.div`
     
-    width:90%;
-    height:100px;
+    width:100%;
+    height:50px;
+    & p{
+        font-weight : 600;
+        font-size:17px;
+        text-align:left;
+    }
     
 `
 
 const PostCard = styled.div`
-    width:60%;
+    width:100%;
     height: 400px;
-    border: 1px solid green
+    border-radius:10px;
+    background: #303338;
+    color:#fff;
+    margin-bottom: 20px
 
 `

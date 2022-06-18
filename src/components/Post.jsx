@@ -121,10 +121,10 @@ export const Post = ({ close, open }) => {
 
 
 const Container = styled.div`
-    width: 100%;
+    width: 40%;
     border: 1px solid #8a8989;
     background: #303338;
-    position:realtive;
+    position:fixed;
     border-radius: 5px;
     display: ${props => props.id ? "none" : "block"};
 
@@ -196,7 +196,7 @@ margin-right:20px;
         }
 
 `
-const ProfileDiv = styled.div`
+export const ProfileDiv = styled.div`
     width:100%;
     display:flex;
     float: left;
@@ -212,7 +212,7 @@ const ProfileDiv = styled.div`
         font-weight:500;
     }
 `
-const Profileimg = styled.div`
+export const Profileimg = styled.div`
     width: 8%;
     height:45px;
     padding:1%;
