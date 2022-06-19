@@ -121,7 +121,7 @@ export const Post = ({ close, open }) => {
 
 
 const Container = styled.div`
-    width: 40%;
+    width: 37%;
     border: 1px solid #8a8989;
     background: #303338;
     position:fixed;
@@ -130,12 +130,12 @@ const Container = styled.div`
 
     @media screen and (max-width: 768px) {
         width:50%;
-        top:-0px;
+        top:0px;
     }
     @media (max-width: 425px){
         width:90%;
         margin-left:5%;
-        top:-0px;
+        top:0px;
     }
 `
 
