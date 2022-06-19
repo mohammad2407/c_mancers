@@ -66,7 +66,7 @@ export const Post = ({ close, open }) => {
                     </div>
                 </ProfileDiv>
 
-                <div style={{ width: "96%", overflow: "auto", height: "150px", marginTop: '30px' }}>
+                <div style={{ width: "97%", overflow: "auto", height: "150px", marginTop: '30px' }}>
 
                     <DiscriptionDiv>
 
@@ -128,6 +128,15 @@ const Container = styled.div`
     border-radius: 5px;
     display: ${props => props.id ? "none" : "block"};
 
+    @media screen and (max-width: 768px) {
+        width:50%;
+        top:-0px;
+    }
+    @media (max-width: 425px){
+        width:90%;
+        margin-left:5%;
+        top:-0px;
+    }
 `
 
 const PostBtn = styled.button`
@@ -228,7 +237,7 @@ const DiscriptionDiv = styled.div`
     padding: 1% 2% 2% 2%;
     display:flex;
     flex-direction:column;
-    
+    width:100%;
     & textarea{
         font-size:30px;
         font-family:Arial, Helvetica, sans-serif;
@@ -238,6 +247,10 @@ const DiscriptionDiv = styled.div`
         background: #303338;
         color:#fff;
         margin-top: 20px;
+
+        @media ( max-width: 425px){
+            font-size:20px;
+        }
 
     };
     & ::placeholder{

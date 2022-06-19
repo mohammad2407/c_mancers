@@ -63,7 +63,7 @@ export const GifModal = ({close}) => {
                         borderBottom:"1px solid #8a8989"
                     }}>Create post
                     
-                    <button style={{float:"left", padding:'1% 3%'}} onClick={() => close(false)}>close</button>
+                    <button style={{float:"left", padding:'1% 3%'}} onClick={() => close(false)}>back</button>
                     </div>
 
             <SearchDiv style={{border:"none"}}>
@@ -93,12 +93,21 @@ export const GifModal = ({close}) => {
 const GifContainer = styled.div`
     
    
-    width:100%;
+    width:37%;
     height:400px;
     overflow:auto;
     border: 1px solid #8a8989;
     border-radius: 10px;
     background: #303338;
+    position:fixed;
+
+    @media screen and (max-width:768px){
+        width:50%;
+    }
+    @media (max-width: 425px){
+        width:80%;
+        margin-left:10%;
+    }
 
 `
 
@@ -115,6 +124,20 @@ const SearchDiv = styled.div`
         color:#e6e0e0;
         font-size:17px;
         font-weight:400;
+
+        @media screen and (min-width: 1024px)and ( max-width:1400px){
+            width:50%;
+        };
+
+        @media (max-width:1024px) {
+            width:50%;
+        };
+        @media (max-width:767px){
+            width: 40%;
+        }
+        @media (max-width: 425px){
+            width: 40%;
+        }
     };
 
     & button {
@@ -123,20 +146,25 @@ const SearchDiv = styled.div`
         border:none;
         font-size:16px;
         /* outline:none; */
+        @media ( max-width: 768px){
+            font-size:14px;
+            padding:11px 15px;
+        }   
     }
 `
 
 const GifHeader = styled.div`
     position:fixed;
-    width:37%;
+    width:100%;
     position:absolute;
     display:flex;
     border-bottom: 1px solid #8a8989;
     padding: 10px 0;
-
     display:flex;
     flex-direction:column;
     background: #303338;
     border:none;
+
+
 
 `

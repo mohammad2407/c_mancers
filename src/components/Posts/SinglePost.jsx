@@ -18,7 +18,7 @@ export const SinglePost = () => {
                 <PostHeader>
                 <ProfileDiv>
                     <Profileimg>
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ6wfHdYsY-0aLx-XVhhtURCs65sGi78wHNg&usqp=CAU" style={{ width: "100%", height: "100%" }} alt="" />
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQ6wfHdYsY-0aLx-XVhhtURCs65sGi78wHNg&usqp=CAU" style={{width:"100%", height:"100%"}} alt="" />
                     </Profileimg>
                     <div>
                         <h3>Mohammad</h3>
@@ -26,10 +26,10 @@ export const SinglePost = () => {
                 </ProfileDiv>
                 </PostHeader>
 
-                <div>
+                <ContentDiv>
                     <p style={{textAlign:"left", marginLeft:"5%"}}>{item.title}</p>
                     <img src={content.gifurl} style = {{width:"100%"}} alt="" />
-                </div>
+                </ContentDiv>
                 </PostCard>
                 
                 </>
@@ -55,10 +55,22 @@ const PostHeader = styled.div`
 
 const PostCard = styled.div`
     width:100%;
-    height: 400px;
     border-radius:10px;
+    height:550px;
     background: #303338;
     color:#fff;
-    margin-bottom: 20px
+    margin-bottom: 20px;
+    
 
+
+`
+
+const ContentDiv = styled.div`
+    width:100%;
+    height:70%;
+    
+    & img{
+        width:100%;
+        height:100%;
+    }
 `

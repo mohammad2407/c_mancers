@@ -8,6 +8,18 @@ const Postcontainer = styled.div`
 width:37%;
 margin:auto;
 
+@media( min-width: 768px) and (max-width:1023px){
+    width:50%;
+}
+
+@media (max-width:767px){
+    width:70%;
+}
+@media (max-width: 425px){
+    width:100%;
+}
+
+
 `
 const Addapost = styled.div`
     width:100%;
@@ -24,7 +36,14 @@ const Addapost = styled.div`
         border:none;
         text-align:left;
         font-size:15px;
+        @media( max-width: 768px){
+        width:90%;
+        
     };
+};
+    @media (max-width: 768px){
+         padding:10px 0px;
+    }
     & :hover{
             background:#646464;
             cursor: pointer;
@@ -37,25 +56,25 @@ const Addapost = styled.div`
 
 export const Body = () => {
 
-    const [open, setOpen] = useState (false)
-  return (
-    <>
-    <Postcontainer>
-       <Addapost>
-        <img src="https://scontent.fhyd5-1.fna.fbcdn.net/v/t39.30808…baGBgwAS53z1cb8R0rfoQU9r2n4fA8Eflj_gA&oe=62B2259E" alt="" />
-        <button onClick={() => setOpen(true)}>
-            What's on your mind, MOhammad
-        </button>
+    const [open, setOpen] = useState(false)
+    return (
+        <>
+            <Postcontainer>
+                <Addapost>
+                    <img src="https://scontent.fhyd5-1.fna.fbcdn.net/v/t39.30808…baGBgwAS53z1cb8R0rfoQU9r2n4fA8Eflj_gA&oe=62B2259E" alt="" />
+                    <button onClick={() => setOpen(true)}>
+                        What's on your mind, MOhammad
+                    </button>
 
-        
-       </Addapost>
-        {
-            open && <Post close = {setOpen} open = {open}/> 
-        }
-         <SinglePost />
-    </Postcontainer>
+
+                </Addapost>
+                {
+                    open && <Post close={setOpen} open={open} />
+                }
+                <SinglePost />
+            </Postcontainer>
 
         </>
- 
-  )
+
+    )
 }
