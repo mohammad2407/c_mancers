@@ -5,15 +5,19 @@ import { useState } from 'react';
 import { GifModal } from './GifModal';
 import { useDispatch, useSelector } from "react-redux"
 import { addGifs, deleteGif, eventPost, reset } from '../Redux/action/action';
+import { style } from '@mui/system';
+import {v4 as uuid} from 'uuid'
 
 // character size 19 if lenth is < 85;
 export const Post = ({ close, open }) => {
 
-    const dispatch = useDispatch()
     const giphys = useSelector((state) => state.allPosts.gifs)
+    const dispatch = useDispatch()
 
     const [opengif, setOpenGif] = useState(false)
     const [message, setMessage] = useState("")
+
+    // Opening and closing of modal
     const handleGifModal = () => {
         setOpenGif(true)
     }
@@ -21,14 +25,14 @@ export const Post = ({ close, open }) => {
     const Textmessage = (event) => {
         event.preventDefault()
         setMessage(event.target.value)
-        // dispatch(updateMessage(message)) 
     }
 
     const Posting = () =>{
-        
+  
         const payload = {
             postGif: [...giphys],
-            title: message
+            title: message,
+            id : uuid()
         }
 
         dispatch(eventPost(payload))
@@ -99,21 +103,16 @@ export const Post = ({ close, open }) => {
                     </div>
                 </AddGif>
 
-                <PostBtn onClick={Posting} >
+                <PostBtn onClick={Posting} disabled = {message.length == 0 && giphys.length == 0 ? true : false}>
                     Post
                 </PostBtn>
 
             </Container>
 
-
-
-            {/* <Gifcontainer > */}
             {
-                opengif && <GifModal close={setOpenGif} />
-            }
-            {/*            
-        </Gifcontainer> */}
 
+            opengif && <GifModal close={setOpenGif} />
+            }
         </>
     )
 }
@@ -121,21 +120,24 @@ export const Post = ({ close, open }) => {
 
 
 const Container = styled.div`
-    width: 37%;
+    width: 38%;
     border: 1px solid #8a8989;
     background: #303338;
     position:fixed;
     border-radius: 5px;
     display: ${props => props.id ? "none" : "block"};
+    margin-left:1%;
+   
+    @media screen and (max-width: 1024px) {
+        width:40%;
+    };
 
-    @media screen and (max-width: 768px) {
-        width:50%;
-        top:0px;
+    @media (max-width: 768px){
+        width: 50%;
     }
     @media (max-width: 425px){
         width:90%;
         margin-left:5%;
-        top:0px;
     }
 `
 
@@ -150,6 +152,9 @@ const PostBtn = styled.button`
     outline:none;
     border:none;
     margin-bottom:20px;
+
+
+
  
 
 `
@@ -167,6 +172,7 @@ const Gifremove = styled.div`
         border:none;
         height:100%;
     }
+
 `
 
 export const Header = styled.div`

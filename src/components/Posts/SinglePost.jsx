@@ -14,7 +14,7 @@ export const SinglePost = () => {
             
             return (
                 <>
-                <PostCard key={content.gifid}>
+                <PostCard key={item.id}>
                 <PostHeader>
                 <ProfileDiv>
                     <Profileimg>
@@ -28,7 +28,8 @@ export const SinglePost = () => {
 
                 <ContentDiv>
                     <p style={{textAlign:"left", marginLeft:"5%"}}>{item.title}</p>
-                    <img src={content.gifurl} style = {{width:"100%"}} alt="" />
+
+                 { content && <img src={content.gifurl} style = {{width:"100%"}} alt="" /> }
                 </ContentDiv>
                 </PostCard>
                 
@@ -56,21 +57,20 @@ const PostHeader = styled.div`
 const PostCard = styled.div`
     width:100%;
     border-radius:10px;
-    height:550px;
     background: #303338;
     color:#fff;
     margin-bottom: 20px;
-    
+    border : 1px solid #fff;
+    padding-bottom: 50px;
 
 
 `
 
 const ContentDiv = styled.div`
     width:100%;
-    height:70%;
     
     & img{
         width:100%;
-        height:100%;
+        height:70%;
     }
 `

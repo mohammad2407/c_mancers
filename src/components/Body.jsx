@@ -10,6 +10,7 @@ margin:auto;
 
 @media( min-width: 768px) and (max-width:1023px){
     width:50%;
+
 }
 
 @media (max-width:767px){
@@ -63,7 +64,7 @@ export const Body = () => {
                 <Addapost>
                     <img src="https://scontent.fhyd5-1.fna.fbcdn.net/v/t39.30808…baGBgwAS53z1cb8R0rfoQU9r2n4fA8Eflj_gA&oe=62B2259E" alt="" />
                     <button onClick={() => setOpen(true)}>
-                        What's on your mind, MOhammad
+                        What's on your mind, Mohammad
                     </button>
 
 
