@@ -100,6 +100,11 @@ const GifContainer = styled.div`
     border-radius: 10px;
     background: #303338;
     position:fixed;
+    margin-left:3%;
+
+    @media (max-width: 1024px){
+        width: 50%;
+    }
 
     @media screen and (max-width:768px){
         width:50%;

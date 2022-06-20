@@ -55,13 +55,14 @@ const PostHeader = styled.div`
 `
 
 const PostCard = styled.div`
-    width:100%;
+    width:82%;
     border-radius:10px;
     background: #303338;
     color:#fff;
     margin-bottom: 20px;
     border : 1px solid #fff;
     padding-bottom: 50px;
+    margin-left:12%;
 
 
 `

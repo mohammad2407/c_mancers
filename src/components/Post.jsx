@@ -57,7 +57,7 @@ export const Post = ({ close, open }) => {
                         fontSize: "20px",
 
                     }}>Create post</div>
-                    <Cancel style={{ width: "7.4%", float:'right' }} onClick={() => close(false)}>
+                    <Cancel  onClick={() => close(false)}>
                         <button >x</button>
                     </Cancel>
                 </Header>
@@ -94,7 +94,7 @@ export const Post = ({ close, open }) => {
 
 
                 <AddGif>
-                    <div style={{ width: "40%" }}>
+                    <div style={{ width: "60%" }}>
                         <p onClick={handleGifModal}>Add to you post</p>
                     </div>
 
@@ -120,23 +120,22 @@ export const Post = ({ close, open }) => {
 
 
 const Container = styled.div`
-    width: 38%;
+    width: 40%;
     border: 1px solid #8a8989;
     background: #303338;
     position:fixed;
     border-radius: 5px;
     display: ${props => props.id ? "none" : "block"};
-    margin-left:1%;
    
     @media screen and (max-width: 1024px) {
-        width:40%;
+        width:50%;
     };
 
     @media (max-width: 768px){
-        width: 50%;
+        width: 60%;
     }
     @media (max-width: 425px){
-        width:90%;
+        width:80%;
         margin-left:5%;
     }
 `
@@ -185,12 +184,16 @@ export const Header = styled.div`
 
 export const Cancel = styled.div`
 /* float:right; */
+width: 7.4%;
 height:37px;
-
 border-radius:80%;
 background:#696969;
 margin-right:20px;
 
+@media (max-width: 768px){
+    height:27px;
+
+};
 & button{
             text-align: center;
             font-size:28px;
@@ -199,7 +202,10 @@ margin-right:20px;
             border:none;
             cursor: pointer;
             transition: 0.2s all;
-            
+
+           @media (max-width: 768px){
+            font-size:15px;
+           } 
 
         };
 
@@ -225,13 +231,20 @@ export const ProfileDiv = styled.div`
         font-family:Arial, Helvetica, sans-serif;
         letter-spacing:1px;
         font-weight:500;
+        @media (max-width:768px){
+            font-size:14px;
+        }
     }
+
 `
 export const Profileimg = styled.div`
     width: 8%;
     height:45px;
     padding:1%;
     
+    @media (max-width:768px){
+        height:30px;
+    }
     & img{
         border-radius:70%;
 
@@ -254,7 +267,7 @@ const DiscriptionDiv = styled.div`
         color:#fff;
         margin-top: 20px;
 
-        @media ( max-width: 425px){
+        @media ( max-width: 768px){
             font-size:20px;
         }
 
@@ -280,6 +293,9 @@ const AddGif = styled.div`
         color:#fff;
         font-weight:600;
         cursor:pointer;
+        @media (max-width:768px){
+            font-size: 14px;
+        }
 
     }
     

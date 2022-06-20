@@ -5,19 +5,19 @@ import { Post } from './Post'
 import { SinglePost } from './Posts/SinglePost'
 
 const Postcontainer = styled.div`
-width:37%;
-margin:auto;
+width:40%;
+margin: auto; 
 
-@media( min-width: 768px) and (max-width:1023px){
+@media( min-width: 768px) and (max-width:1024px){
     width:50%;
 
 }
 
 @media (max-width:767px){
-    width:70%;
+    width:60%;
 }
 @media (max-width: 425px){
-    width:100%;
+    width:90%;
 }
 
 
@@ -41,6 +41,9 @@ const Addapost = styled.div`
         width:90%;
         
     };
+    @media (max-width: 425px){
+        width: 100%;
+    }
 };
     @media (max-width: 768px){
          padding:10px 0px;
